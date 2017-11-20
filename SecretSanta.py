@@ -15,7 +15,6 @@ def SamePerson(list):
         for key in dictionary:
             file.write(key + "'s secret Santa is " + dictionary[key] + "\n")
         file.close()
-    print(dictionary)
 
 
 def differentPeople(list):
@@ -31,7 +30,8 @@ def differentPeople(list):
             for key in dictionary:
                 if dictionary[key] == "No one" and key != list[index] and (list[index] not in dictionary.values()):
                     dictionary[key] = list[index]
-    print(dictionary)
+    for key in dictionary:
+        print(key + "'s secret Santa is " + dictionary[key])
     save = input("> Do you want this to be saved to a SecretSanta.txt file?: ")
     if save.lower() == "yes":
         file = open("SecretSanta.txt", "w")
